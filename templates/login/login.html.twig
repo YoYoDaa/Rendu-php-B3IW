@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Connexion
+{% endblock %}
+
+{% block body %}
+
+    <h1>Connexion</h1>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/login/verify" method="post">
+    <div>
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" />
+    </div>
+
+    <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password" />
+    </div>
+
+    <div>
+        <input type="submit" value="Connexion" />
+    </div>
+    </form>
+{% endblock %}
